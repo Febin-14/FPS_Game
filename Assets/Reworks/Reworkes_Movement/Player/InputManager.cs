@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class InputManager : MonoBehaviour
     public bool JumpInput { get; set; }
     public bool SprintInput { get; set; }
     public bool InteractInput { get; set; }
+    public bool InventoryInput { get; set; }
 
     private void Awake()
     {
@@ -71,7 +73,17 @@ public class InputManager : MonoBehaviour
             {
                InteractInput = false;
                //Debug.Log("Canceled: Interact");
-            }; 
+            };
+            _inputActions.Player.Inventory.performed += ctx =>
+            {
+                InventoryInput = true;
+                //Debug.Log("Performed: Inventory");
+            };
+            // _inputActions.Player.Inventory.canceled += ctx =>
+            //{
+            //    InventoryInput = false;
+            //    //Debug.Log("Canceled: Inventory");
+            // };
 
         }
 
@@ -93,6 +105,18 @@ public class InputManager : MonoBehaviour
     public void ConsumeInteract()
     {
         InteractInput = false;
+    }
+    private void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            InventoryInput = true;
+        }
+    }
+
+    public void ConsumeInventory()
+    {
+        InventoryInput = false;
     }
 
 

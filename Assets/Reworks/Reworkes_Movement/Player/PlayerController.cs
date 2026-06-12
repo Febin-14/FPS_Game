@@ -26,14 +26,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.currentState != GameState.Playing)
+            return;
         HandleGrounding();
         HandleMovement();
        HandleJump();
-
-
-        
-
-
     }
     private bool IsGrounded()
     { 
@@ -61,6 +58,8 @@ public class PlayerController : MonoBehaviour
    
     private float GetSpeed()
     {
+        if(!isGrounded)
+            return moveSpeed; // No sprinting in the air
         return _inputManager.SprintInput ? sprintSpeed : moveSpeed; 
     }
     private void HandleMovement()

@@ -17,6 +17,10 @@ public class MouseMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (GameManager.Instance.currentState != GameState.Playing)
+        {
+            return;
+        }
         float mouseX =
             _inputManager.LookInput.x * mouseSensitivity;
 
@@ -33,4 +37,5 @@ public class MouseMovement : MonoBehaviour
 
         player.Rotate(Vector3.up * mouseX);
     }
+    
 }

@@ -45,23 +45,23 @@ public class ShootMechanism : MonoBehaviour
     void shoot()
     {   
 
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit,range))
-        {
-            Target target = hit.transform.GetComponent<Target>();
-            if(target != null)
-            {
-                target.Die();
-                GameManager.Instance.AddScore();
-            }
+        //RaycastHit hit;
+        //if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit,range))
+        //{
+        //    Target target = hit.transform.GetComponent<Target>();
+        //    if(target != null)
+        //    {
+        //        target.Die();
+        //        GameManager.Instance.AddScore();
+        //    }
             
-        }
+        //}
     }
     void Dispbullet()
     {
         
-        canShoot = GameManager.Instance.UseBullet();
-        return;
+        //canShoot = GameManager.Instance.UseBullet();
+        //return;
 
     }
 }

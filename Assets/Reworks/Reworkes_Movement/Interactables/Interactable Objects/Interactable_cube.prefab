@@ -125,3 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c50e1769ab273d4dadf4b2dae8417c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestCube
+  interactionPrompt: Press E to interact.
+  itemData: {fileID: 11400000, guid: a1d83ed2a8773394d8c6cffca0bcf015, type: 2}

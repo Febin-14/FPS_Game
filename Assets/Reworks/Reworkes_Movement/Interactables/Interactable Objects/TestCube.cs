@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class TestCube : MonoBehaviour, IInteractable
 {
+    [SerializeField] private string interactionPrompt = "Press E to interact.";
+    [SerializeField] private ItemSO itemData;
     public void Interact()
     {
-        Debug.Log("Interacted with the cube!");
+       bool added = InventoryManager.Instance.Additem(itemData);
+        if (added)
+        {
+            Destroy(gameObject);
+        }
     }
     public string GetInteractionPrompt()
     {
-        return "Press E to interact with the cube.";
+        return interactionPrompt;
     }
 }

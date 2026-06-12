@@ -10,18 +10,18 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-            {
-            GameManager.Instance.isGamePaused = !(GameManager.Instance.isGamePaused);
-            if(GameManager.Instance.isGamePaused == true)
-            {
-                PauseGame();
-            }
-            else
-            {
-                ResumeGame();
-            }
-        }
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //    {
+        //    GameManager.Instance.isGamePaused = !(GameManager.Instance.isGamePaused);
+        //    if(GameManager.Instance.isGamePaused == true)
+        //    {
+        //        PauseGame();
+        //    }
+        //    else
+        //    {
+        //        ResumeGame();
+        //    }
+        //}
         
     }
     public void PauseGame()
@@ -39,13 +39,13 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Resume Game");
         container.SetActive(false);
         Time.timeScale = 1f;
-        GameManager.Instance.isGamePaused = false;
+        //GameManager.Instance.isGamePaused = false;
     }
     public void TryAgain()
     {
         Debug.Log("Try Again");
         Time.timeScale = 1f;
-        GameManager.Instance.isGamePaused = false;
+        //GameManager.Instance.isGamePaused = false;
         startScene.StartGame();
 
     }
@@ -56,14 +56,15 @@ public class PauseMenu : MonoBehaviour
     }
     public void CheckIsGamePause()
     {
-        if (GameManager.Instance.isGamePaused == true)
-        {
-            PauseGame();
-        }
-        else
-        {
-            ResumeGame();
-        }
+    //    if (GameManager.Instance.isGamePaused == true)
+    //    {
+    //        PauseGame();
+    //    }
+    //    else
+    //    {
+    //        ResumeGame();
+    //    }
+    //
     }
 
 }

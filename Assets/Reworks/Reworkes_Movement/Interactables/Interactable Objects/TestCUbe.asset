@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025148ddb75d4c848819fe4b8ec0db1f, type: 3}
+  m_Name: TestCUbe
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  description: This is just a Test object
+  itemName: Testing object
+  itemIcon: {fileID: 21300000, guid: b273b3d6814daf74fb3fcca850ff0f61, type: 3}
+  maxStackSize: 0
+  itemPrefab: {fileID: 1821710061834920429, guid: 80ee52f176679d84fbd0c646ccebcf96, type: 3}
+  handItemPrefab: {fileID: 1821710061834920429, guid: 80ee52f176679d84fbd0c646ccebcf96, type: 3}
+  inspectPrefab: {fileID: 6233062030327624245, guid: 6dc72005ed2c63d40b00661103cde409, type: 3}

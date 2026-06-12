@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025148ddb75d4c848819fe4b8ec0db1f, type: 3}
+  m_Name: Gun
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  description: A rusted Gun. how did it get here?
+  itemName: Gun
+  itemIcon: {fileID: 21300000, guid: b2cdaa71e96484d42a0bc3a2e05afc2d, type: 3}
+  maxStackSize: 1
+  itemPrefab: {fileID: 4397000647550977563, guid: 08f7108a31690324ba03d5969be25d76, type: 3}
+  handItemPrefab: {fileID: 4397000647550977563, guid: 08f7108a31690324ba03d5969be25d76, type: 3}
+  inspectPrefab: {fileID: 4397000647550977563, guid: 08f7108a31690324ba03d5969be25d76, type: 3}
