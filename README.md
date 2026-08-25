@@ -17,9 +17,9 @@ A first-person shooter prototype developed in Unity and C#.
 
 ## Currently Working On
 
-- [whatever you're currently building]
-- [next system]
-- [future improvement]
+- Weapon Systems
+- Enemy AI
+- Improving Architecture 
 
 ## Tech
 
