@@ -6,19 +6,21 @@ public class InputManager : MonoBehaviour
     private PlayerInputActions _inputActions;
     public Vector2 MoveInput { get; private set; }
     public Vector2 LookInput { get; private set; }
+
+    public bool ShootInput {get; set;}
     public bool JumpInput { get; set; }
     public bool SprintInput { get; set; }
     public bool InteractInput { get; set; }
     public bool InventoryInput { get; set; }
 
+    public bool ReloadInput { get; set; }
+
     private void Awake()
     {
          _inputActions = new PlayerInputActions();
-        //Debug.Log("Instance Created");
     }
     private void OnEnable()
     {
-        //Debug.Log("Enabling Input Manager");
     
         if(_inputActions != null)
         {
@@ -72,18 +74,20 @@ public class InputManager : MonoBehaviour
              _inputActions.Player.Interact.canceled += ctx =>
             {
                InteractInput = false;
-               //Debug.Log("Canceled: Interact");
             };
             _inputActions.Player.Inventory.performed += ctx =>
             {
                 InventoryInput = true;
-                //Debug.Log("Performed: Inventory");
             };
-            // _inputActions.Player.Inventory.canceled += ctx =>
-            //{
-            //    InventoryInput = false;
-            //    //Debug.Log("Canceled: Inventory");
-            // };
+            _inputActions.Player.Shoot.performed += ctx =>
+            {
+                ShootInput = true;
+            };
+            _inputActions.Player.Reload.performed += ctx =>
+            {
+                ReloadInput = true;
+                Debug.Log("Reload Input Performed in InputManager");
+            };
 
         }
 
@@ -97,14 +101,22 @@ public class InputManager : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log(LookInput);
+        
     }
     public void ConsumeJump()
     { JumpInput = false;
     }
+    public void ConsumeShoot()
+    { ShootInput = false;
+    }
     public void ConsumeInteract()
     {
         InteractInput = false;
+    }
+    public void ConsumeReload()
+    {
+        ReloadInput = false;
+        Debug.Log("Reload Input Consumed in InputManager");
     }
     private void OnInventory(InputAction.CallbackContext context)
     {

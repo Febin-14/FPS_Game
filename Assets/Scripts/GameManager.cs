@@ -5,21 +5,8 @@ using System.Collections;
 public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-    //private int Score = 0;
-    //public TextMeshProUGUI scoreText;
-    //public int bullets = 30;
-    //public TextMeshProUGUI bulletText;
-    //public bool canShoot = true;
-    //public StartScene startScene;
-    //public bool isGameOver = false;
-    //public bool isGamePaused = false;
+
     public GameState currentState { get;private set; }
-   
-    
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
         {
             Instance = this;
@@ -28,34 +15,7 @@ public class GameManager : MonoBehaviour
         currentState = GameState.Playing;
     }
 
-    //    public void AddScore()
-    //    {
-    //        Score += 1;
-    //        if (scoreText != null)
-    //        {
-    //            scoreText.text = "Score: " + Score.ToString();
-    //        }
 
-    //    }
-    //    public bool UseBullet()
-    //    {
-    //        bullets -= 1;
-    //        if(bullets <= 0)
-    //        {
-    //            Debug.Log("Out of bullets!");
-    //            canShoot = false;
-    //            GameOver(); 
-                
-
-    //    }
-    //    if (bulletText != null)
-    //           {
-    //        bulletText.text = "Ammo Left : " + bullets.ToString();
-    //           }
-    //        return canShoot;
-
-
-    //}
     public void GameOver()
     {
         
@@ -75,7 +35,11 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                
+                break;
+            case GameState.Inspecting:
+                Time.timeScale = 0f;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 break;
             case GameState.Inventory:
                 Time.timeScale = 0f;
@@ -102,5 +66,6 @@ public enum GameState
     Paused,
     Inventory,
     ReadingNotes,
-    GameOver
+    GameOver,
+    Inspecting
 }

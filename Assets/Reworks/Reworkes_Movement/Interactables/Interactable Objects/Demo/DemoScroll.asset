@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025148ddb75d4c848819fe4b8ec0db1f, type: 3}
+  m_Name: DemoScroll
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemDescription: 
+  itemType: 2
+  noteTitle: Dungeon door Key
+  noteContent: "I have successfully hidden the Dungeon Key in one of the shelves
+    in the room. Find it and escape. \nKeep yourself low!!"
+  itemName: 
+  itemIcon: {fileID: 0}
+  maxStackSize: 0
+  itemPrefab: {fileID: 100000, guid: ac8910006b2a62947a9342d2b6ddfa2a, type: 3}
+  handItemPrefab: {fileID: 100000, guid: ac8910006b2a62947a9342d2b6ddfa2a, type: 3}
+  inspectPrefab: {fileID: 100000, guid: ac8910006b2a62947a9342d2b6ddfa2a, type: 3}

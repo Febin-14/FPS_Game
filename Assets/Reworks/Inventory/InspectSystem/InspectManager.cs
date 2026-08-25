@@ -27,6 +27,7 @@ public class InspectManager : MonoBehaviour
     }
     public void StartInspect(ItemSO item)
     {
+        GameManager.Instance.SetState(GameState.Inspecting);
         if(item != null)
         {
             inspectPanel.SetActive(true);
@@ -35,7 +36,7 @@ public class InspectManager : MonoBehaviour
 
         currentObject = Instantiate(item.inspectPrefab, spawnPoint.transform.position, Quaternion.identity);
         itemNameText.text = item.itemName;
-        itemDescriptionText.text = item.description;
+        itemDescriptionText.text = item.itemDescription;
         inventoryUI.SetActive(false);
 
     }
@@ -45,6 +46,7 @@ public class InspectManager : MonoBehaviour
     }
     public void StopInspect()
     {
+        GameManager.Instance.SetState(GameState.Inventory);
         inspectPanel.SetActive(false);
         inventoryUI.SetActive(true);
         Destroy(currentObject);

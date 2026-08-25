@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025148ddb75d4c848819fe4b8ec0db1f, type: 3}
   m_Name: Gun
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  description: A rusted Gun. how did it get here?
+  itemDescription: A rust Gun
+  itemType: 4
+  noteTitle: 
+  noteContent: 
+  damageAmt: 25
   itemName: Gun
   itemIcon: {fileID: 21300000, guid: b2cdaa71e96484d42a0bc3a2e05afc2d, type: 3}
   maxStackSize: 1

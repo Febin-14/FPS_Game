@@ -4,7 +4,10 @@ using UnityEngine;
         Normal,
         Key,
         Note,
-        PuzzleItem
+        PuzzleItem,
+        Gun,
+        Axe
+
     }
 
 
@@ -13,12 +16,17 @@ public class ItemSO : ScriptableObject
 {
     // Description shown when inspecting the item
     [TextArea]
-    public string description;
+    public string itemDescription;
 
     public ItemType itemType;
+    public string noteTitle;
 
     [TextArea(10,20)]
-    public string NoteText;
+    public string noteContent;
+
+
+
+    public int damageAmt;
 
     // Display name of the item
     public string itemName;

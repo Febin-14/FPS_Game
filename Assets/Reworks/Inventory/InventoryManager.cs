@@ -23,6 +23,7 @@ public class InventoryManager : MonoBehaviour
             return false;
         }
     items.Add(item);
+        AudioManager.Instance.PlayPickItem();   
         UpdateUI();
         return true;
     }
@@ -55,4 +56,5 @@ public class InventoryManager : MonoBehaviour
     {
         messageText.gameObject.SetActive(false);
     }
+
 }

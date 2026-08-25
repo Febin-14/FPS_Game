@@ -13,6 +13,7 @@ public class Slots : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
     private Image itemImage;
     private TextMeshProUGUI amountText;
 
+
     private void Awake()
     {
     }
@@ -103,7 +104,41 @@ public class Slots : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
     {
         if (heldItem == null)
             return;
+        switch(eventData.button)
+        {
+            case PointerEventData.InputButton.Left:
 
+                EquipItem();
+                break;
+            case PointerEventData.InputButton.Right:
+                InspectItem();
+                break;
+        }
+
+    }
+
+    public void EquipItem()
+    {
+        switch(heldItem.itemType)
+        {
+            case ItemType.Gun:
+            case ItemType.Axe:
+                if(WeaponManager.Instance.isEquipped(heldItem))
+                {
+                    WeaponManager.Instance.Unequip();
+                }
+                else
+                {
+                    WeaponManager.Instance.Equip(heldItem);
+                }
+                break;
+
+        }
+
+    }
+    public void InspectItem()
+    {
         InspectManager.Instance.StartInspect(heldItem);
+
     }
 }

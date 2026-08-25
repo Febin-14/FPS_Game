@@ -12,8 +12,16 @@ public class InventoryUI : MonoBehaviour
     {
         if (inputManager.InventoryInput)
         {
-            ToggleInventory();
-            inputManager.ConsumeInventory();
+            if(GameManager.Instance.currentState == GameState.Playing)
+            {
+                ToggleInventory();
+            }
+            else if(GameManager.Instance.currentState == GameState.Inventory)
+            {
+                ToggleInventory();  
+            }
+
+                inputManager.ConsumeInventory();
             if (inventoryOpen)
             {
                 Debug.Log(GameManager.Instance);
@@ -29,7 +37,7 @@ public class InventoryUI : MonoBehaviour
     private void ToggleInventory()
     {
         inventoryOpen = !inventoryOpen;
-        Debug.Log("Inventory State" + inventoryOpen);
+        AudioManager.Instance.OpenInventorySound();
         inventoryPanel.SetActive(inventoryOpen);
     }
 }

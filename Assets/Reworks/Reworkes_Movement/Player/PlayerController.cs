@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,11 +13,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintSpeed = 8f;
     [SerializeField] private float groundForce = -2f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float footStepInterval = 0.4f;
+    [SerializeField] private float runInterval = 0.25f;
     
     private float _verticalVelocity;
     private CharacterController _characterController;
     private InputManager _inputManager;
     private bool isGrounded;
+    private bool wasGrounded;
+    
+    public float footStepTimer;
 
     private void Awake()
     {
@@ -30,8 +36,20 @@ public class PlayerController : MonoBehaviour
             return;
         HandleGrounding();
         HandleMovement();
-       HandleJump();
+        HandleFootSteps();
+        HandleJump();
+        HandleShoot();
     }
+
+    private void HandleShoot()
+    {
+        if(_inputManager.ShootInput)
+        {
+            WeaponManager.Instance.Shoot();
+            _inputManager.ConsumeShoot();
+        }
+    }
+
     private bool IsGrounded()
     { 
         return Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
@@ -49,6 +67,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
+            AudioManager.Instance.PlayJumpSound();
             _verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
             _inputManager.ConsumeJump();// Reset jump input after processing
 
@@ -83,10 +102,43 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleGrounding()
     {
-        isGrounded = IsGrounded();
-        if (isGrounded && _verticalVelocity < 0)
+        bool isCurrentlyGrounded = IsGrounded();
+        if(!wasGrounded && isCurrentlyGrounded)
         {
-            _verticalVelocity = groundForce; // Small negative value to keep the player grounded
+            AudioManager.Instance.PlayLandSound();
+            
+        }
+        isGrounded = isCurrentlyGrounded;
+        wasGrounded = isCurrentlyGrounded;
+
+        if(!isGrounded && _verticalVelocity < 0)
+        {
+            _verticalVelocity = groundForce;
+        }
+
+    }
+    private void HandleFootSteps()
+    {
+        
+        bool isMoving = _inputManager.MoveInput.magnitude > 0.1f;
+        float currentFootStepInterval = _inputManager.SprintInput ? runInterval : footStepInterval;
+        if (!isGrounded)
+        {
+            footStepTimer = 0f;
+            return;
+        }
+        if(!isMoving)
+        {
+            footStepTimer = footStepInterval * 0.5f;//half of footStepInterval, for faster Time.
+            return;
+        }
+        footStepTimer += Time.deltaTime;
+        if(footStepTimer >= currentFootStepInterval)
+        {
+            Debug.Log("Playing");
+            AudioManager.Instance.PlayFootSteps();
+            footStepTimer = 0;
+
         }
     }
 

@@ -14,7 +14,7 @@ public class InventoryInspectUI : MonoBehaviour
         currentItem = item;
         inventoryPanel.SetActive(true);
         item_name.text = item.name;
-        item_Descrip.text = item.description;
+        item_Descrip.text = item.itemDescription;
     }
     public ItemSO GetCurrentItem()
     {

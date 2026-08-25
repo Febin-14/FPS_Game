@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025148ddb75d4c848819fe4b8ec0db1f, type: 3}
   m_Name: TestNote
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  description: 
+  itemDescription: 
+  itemType: 2
+  noteTitle: Generator Key Missing
+  noteContent: 'If anyone is looking for it, I left it inside
+
+    the red toolbox
+    in the storage room.
+
+
+
+    - Mark'
   itemName: 
   itemIcon: {fileID: 0}
   maxStackSize: 0

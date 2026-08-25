@@ -12,6 +12,8 @@ TagManager:
   - Enemy(Basic)
   - CinemachineTarget
   - FPS_CAMERA
+  - Gun
+  - Axe
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - GroundCheck
   - PlayerHead
   - Interactable
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -58,3 +60,4 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
+  m_MigratedRenderPipelines: []
