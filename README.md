@@ -2,6 +2,17 @@
 
 A first-person shooter prototype developed in Unity and C#.
 
+## Screenshots
+
+### Gameplay
+![Gameplay](Media/Screenshots/gameplay.png)
+
+### Inventory
+![Inventory](Media/Screenshots/inventory.png)
+
+### Weapon & Ammo System
+![Weapon and Ammo System](Media/Screenshots/weapon-ammo.png)
+
 ## Current Features
 
 - Player movement
@@ -19,7 +30,11 @@ A first-person shooter prototype developed in Unity and C#.
 
 - Weapon Systems
 - Enemy AI
-- Improving Architecture 
+- Improving Architecture
+
+## Gameplay Video
+
+[Watch the gameplay video](YOUR_VIDEO_LINK_HERE)
 
 ## Tech
 
