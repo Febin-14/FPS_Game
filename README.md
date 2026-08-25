@@ -1,2 +1,33 @@
-This is just a prototype and I am experimenting new stuff 
-PS: And for having Fun
+# FPS Prototype
+
+A first-person shooter prototype developed in Unity and C#.
+
+## Current Features
+
+- Player movement
+- Shooting and raycast-based hit detection
+- Enemy damage system
+- Weapon equip/unequip system
+- Inventory system
+- Ammo and reload system
+- Ammo UI
+- Input System integration
+- Weapon Manager
+- Event-driven UI updates
+
+## Currently Working On
+
+- [whatever you're currently building]
+- [next system]
+- [future improvement]
+
+## Tech
+
+- Unity
+- C#
+- Unity Input System
+- TextMeshPro
+
+## Work In Progress
+
+This project is actively being developed as a learning and prototyping project.
